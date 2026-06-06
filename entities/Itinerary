@@ -1,0 +1,73 @@
+{
+  "name": "Itinerary",
+  "type": "object",
+  "properties": {
+    "trip_id": {
+      "type": "string",
+      "description": "Reference to Trip entity"
+    },
+    "day_number": {
+      "type": "number"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "city": {
+      "type": "string"
+    },
+    "activities": {
+      "type": "array",
+      "description": "Day's activities",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "location_name": {
+            "type": "string"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          },
+          "duration_minutes": {
+            "type": "number"
+          },
+          "cost_estimate": {
+            "type": "number"
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "tips": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "estimated_cost": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "trip_id",
+    "day_number",
+    "date"
+  ]
+}

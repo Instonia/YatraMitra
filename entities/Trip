@@ -1,0 +1,146 @@
+{
+  "name": "Trip",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Trip name"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "confirmed",
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "planning"
+    },
+    "destinations": {
+      "type": "array",
+      "description": "List of destination objects with city, state, lat, lng, order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lng": {
+            "type": "number"
+          },
+          "order": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "budget": {
+      "type": "number",
+      "description": "Total budget in INR"
+    },
+    "transport_modes": {
+      "type": "array",
+      "description": "Preferred transport modes",
+      "items": {
+        "type": "string",
+        "enum": [
+          "train",
+          "flight",
+          "bus",
+          "cab"
+        ]
+      }
+    },
+    "travelers_count": {
+      "type": "number",
+      "default": 1
+    },
+    "trip_type": {
+      "type": "string",
+      "enum": [
+        "solo",
+        "couple",
+        "family",
+        "friends",
+        "business"
+      ],
+      "default": "solo"
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "history",
+          "food",
+          "adventure",
+          "nature",
+          "spiritual",
+          "shopping",
+          "nightlife",
+          "photography",
+          "wildlife"
+        ]
+      }
+    },
+    "emergency_contacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "packing_checklist": {
+      "type": "array",
+      "description": "Packing checklist items for the trip",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "packed": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "start_date",
+    "end_date"
+  ]
+}

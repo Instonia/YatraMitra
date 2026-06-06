@@ -1,0 +1,38 @@
+{
+  "name": "Reminder",
+  "type": "object",
+  "properties": {
+    "trip_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "departure",
+        "checkin",
+        "packing",
+        "booking",
+        "custom"
+      ],
+      "default": "custom"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reminder_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "trip_id",
+    "title"
+  ]
+}
